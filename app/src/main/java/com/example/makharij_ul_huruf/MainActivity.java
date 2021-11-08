@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 public class MainActivity extends AppCompatActivity {
-    private Button button1;
+    private Button button1,button2,button3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button1 = findViewById(R.id.repolink);
+        button2 = findViewById(R.id.learn);
+        button3 = findViewById(R.id.quiz);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -22,6 +24,27 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLearn();
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openQuiz();
+            }
+        });
     }
+    public void openLearn(){
+        Intent intent = new Intent(this, learn.class);
+        startActivity(intent);
+    }
+    public void openQuiz(){
+        Intent intent = new Intent(this, quiz.class);
+        startActivity(intent);
+    }
+
 
 }
