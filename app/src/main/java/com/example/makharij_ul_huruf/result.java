@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class result extends AppCompatActivity {
     TextView tv, tv2, tv3;
-    Button btnRestart, btnShare;
+    Button btnRestart, btnShare,home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class result extends AppCompatActivity {
         tv3 = (TextView)findViewById(R.id.finalscore);
         btnRestart = (Button) findViewById(R.id.btnRestart);
         btnShare = (Button) findViewById(R.id.share);
+        home= (Button) findViewById(R.id.home);
 
         StringBuffer sb = new StringBuffer();
         sb.append("Correct answers: " + quiz.correct + "\n");
@@ -40,6 +41,13 @@ public class result extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(getApplicationContext(),quiz.class);
+                startActivity(in);
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(getApplicationContext(),home.class);
                 startActivity(in);
             }
         });

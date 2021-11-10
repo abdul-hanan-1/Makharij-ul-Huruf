@@ -73,7 +73,7 @@
         android:id="@+id/btnRestart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="4dp"
         android:text="Try Again"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -81,4 +81,17 @@
         app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toEndOf="@+id/finalscore"
         app:layout_constraintTop_toBottomOf="@+id/share" />
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Home"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.729"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRestart" />
 </androidx.constraintlayout.widget.ConstraintLayout>
