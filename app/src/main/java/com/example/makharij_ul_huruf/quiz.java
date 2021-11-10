@@ -18,29 +18,29 @@ public class quiz extends AppCompatActivity {
     RadioButton rb1,rb2,rb3,rb4;
 
     String questions[] = {
-            "Which method can be defined only once in a program?",
-            "Which of these is not a bitwise operator?",
-            "Which keyword is used by method to refer to the object that invoked it?",
-            "Which of these keywords is used to define interfaces in Java?",
-            "Which of these access specifiers can be used for an interface?",
-            "Which of the following is correct way of importing an entire package ‘pkg’?",
-            "What is the return type of Constructors?",
-            "Which of the following package stores all the standard java classes?",
-            "Which of these method of class String is used to compare two String objects for their equality?",
-            "An expression involving byte, int, & literal numbers is promoted to which of these?"
+            "Which of the following is produced from middle of the throat?",
+            "Which of the following is produced from base of Tongue which is near Uvula touching the mouth roof",
+            "Which of the following is produced by Tongue touching the center of the mouth roof",
+            "Which of the following is produced from one side of the tongue touching the molar teeth",
+            "Which of the following is produced from rounded tip of the tongue touching the base of the frontal 8 teeth",
+            "Which of the following is produced from rounded tip of the tongue touching the base of the frontal 6 teeth",
+            "Which of the following is produced from rounded tip of the tongue and some portion near it touching the base of the frontal 4 teeth",
+            "Which of the following is produced from Tip of the tongue touching the base of the front 2 teeth",
+            "Which of the following is produced from Tip of the tongue touching the tip of the frontal teeth",
+            "Which of the following is produced from Tip of the two upper jaw teeth touches the inner part of the lower lip"
     };
-    String answers[] = {"main method","<=","this","interface","public","import pkg.*","None of the mentioned","java","equals()","int"};
+    String answers[] = {"ح","ق","ج","ض","ل","ن","ر","ط","ظ","ف"};
     String opt[] = {
-            "finalize method","main method","static method","private method",
-            "&","&=","|=","<=",
-            "import","this","catch","abstract",
-            "Interface","interface","intf","Intf",
-            "public","protected","private","All of the mentioned",
-            "Import pkg.","import pkg.*","Import pkg.*","import pkg.",
-            "int","float","void","None of the mentioned",
-            "lang","java","util","java.packages",
-            "equals()","Equals()","isequal()","Isequal()",
-            "int","long","byte","float"
+            "أ","غ","خ","ح",
+            "ک","ق","ح","غ",
+            "ج","ق","غ","ق",
+            "ی","ش","ض","ج",
+            "ل","ش","ج","All of the mentioned",
+            "ل","ن","ش","ج",
+            "ل","ش","ر","ق",
+            "ر","ض","ج","ط",
+            "ظ","ق","ل","غ",
+            "ظ","ف","ب","م"
     };
     int flag=0;
     public static int marks=0,correct=0,wrong=0;
