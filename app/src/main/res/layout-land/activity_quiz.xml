@@ -33,7 +33,7 @@
 
     <RadioGroup
         android:id="@+id/answersgrp"
-        android:layout_width="269dp"
+        android:layout_width="297dp"
         android:layout_height="181dp"
         android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,8 +61,8 @@
 
         <RadioButton
             android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="253dp"
+            android:layout_height="29dp"
             android:text="D" />
     </RadioGroup>
 
