@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MakharijulHuruf">
         <activity
+            android:name=".ghunna"
+            android:exported="true" />
+        <activity
+            android:name=".lisaveyah"
+            android:exported="true" />
+        <activity
+            android:name=".niteeyah"
+            android:exported="true" />
+        <activity
+            android:name=".tarfiyah"
+            android:exported="true" />
+        <activity
+            android:name=".haafiyah"
+            android:exported="true" />
+        <activity
+            android:name=".lahatiyah"
+            android:exported="true" />
+        <activity
+            android:name=".halqiyah"
+            android:exported="true" />
+        <activity
             android:name=".home"
             android:exported="true" />
         <activity

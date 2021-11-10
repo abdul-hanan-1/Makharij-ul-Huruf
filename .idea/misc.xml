@@ -7,11 +7,18 @@
         <entry key="app/src/main/res/layout-land/activity_quiz.xml" value="0.1384479717813051" />
         <entry key="app/src/main/res/layout-land/activity_result.xml" value="0.1384479717813051" />
         <entry key="app/src/main/res/layout-v23/activity_main.xml" value="0.15989583333333332" />
+        <entry key="app/src/main/res/layout/activity_ghunna.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_haafiyah.xml" value="0.13858695652173914" />
+        <entry key="app/src/main/res/layout/activity_halqiyah.xml" value="0.13858695652173914" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1431159420289855" />
+        <entry key="app/src/main/res/layout/activity_lahatiyah.xml" value="0.13858695652173914" />
         <entry key="app/src/main/res/layout/activity_learn.xml" value="0.16354166666666667" />
+        <entry key="app/src/main/res/layout/activity_lisaveyah.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_niteeyah.xml" value="0.13858695652173914" />
         <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_result.xml" value="0.15217391304347827" />
+        <entry key="app/src/main/res/layout/activity_tarfiyah.xml" value="0.18" />
       </map>
     </option>
   </component>
