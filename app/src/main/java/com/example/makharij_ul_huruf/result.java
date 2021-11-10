@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class result extends AppCompatActivity {
     TextView tv, tv2, tv3;
-    Button btnRestart;
+    Button btnRestart, btnShare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class result extends AppCompatActivity {
         tv2 = (TextView)findViewById(R.id.wrong);
         tv3 = (TextView)findViewById(R.id.finalscore);
         btnRestart = (Button) findViewById(R.id.btnRestart);
+        btnShare = (Button) findViewById(R.id.share);
 
         StringBuffer sb = new StringBuffer();
         sb.append("Correct answers: " + quiz.correct + "\n");
@@ -42,6 +43,19 @@ public class result extends AppCompatActivity {
                 startActivity(in);
             }
         });
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                startActivity(shareIntent);
+            }
+        });
     }
 
 }
+
