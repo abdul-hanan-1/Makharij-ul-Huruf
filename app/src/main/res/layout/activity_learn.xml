@@ -12,7 +12,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/background3">
 
 
         <TextView
@@ -21,6 +22,7 @@
             android:layout_height="54dp"
             android:layout_marginTop="8dp"
             android:text="2: Throat"
+            android:textColor="#F1ECEC"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,14 +32,16 @@
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="335dp"
-            android:layout_height="88dp"
-            android:layout_marginTop="36dp"
+            android:layout_width="334dp"
+            android:layout_height="123dp"
+            android:layout_marginTop="216dp"
             android:fontFamily="@font/allerta"
             android:text="There are 17 emission points (makhārij al-ḥurūf), located in various regions of: "
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#F1ECEC"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -52,6 +56,7 @@
             android:fontFamily="@font/allerta"
             android:text="The arabic alphabets are categorized as:"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#F1ECEC"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.361"
@@ -67,6 +72,7 @@
             android:layout_height="54dp"
             android:layout_marginTop="16dp"
             android:text="1: Tongue"
+            android:textColor="#F1ECEC"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,6 +86,7 @@
             android:layout_height="54dp"
             android:layout_marginTop="4dp"
             android:text="3: Lips"
+            android:textColor="#F1ECEC"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,6 +100,7 @@
             android:layout_height="54dp"
             android:layout_marginTop="8dp"
             android:text="4: Nose"
+            android:textColor="#F1ECEC"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -106,6 +114,7 @@
             android:layout_height="54dp"
             android:layout_marginTop="8dp"
             android:text="5: Mouth"
+            android:textColor="#F1ECEC"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -117,10 +126,12 @@
             android:id="@+id/b4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="76dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="36dp"
+            android:width="120dp"
+            android:backgroundTint="#3cc8c8"
             android:text="Ghunna"
             android:textStyle="bold"
+            app:cornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/b2" />
 
@@ -129,9 +140,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="4dp"
+            android:width="120dp"
+            android:backgroundTint="#3cc8c8"
             android:text="Lahatiyah"
             android:textStyle="bold"
+            app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/halqiyah"
@@ -139,37 +153,42 @@
 
         <Button
             android:id="@+id/halqiyah"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="76dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="4dp"
+            android:width="120dp"
+            android:backgroundTint="#3cc8c8"
             android:text="Halqiyah"
             android:textStyle="bold"
+            app:cornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name2" />
 
         <Button
             android:id="@+id/b1"
-            android:layout_width="121dp"
+            android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="40dp"
+            android:backgroundTint="#3cc8c8"
             android:text="Tarfiyah"
             android:textStyle="bold"
+            app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.341"
+            app:layout_constraintHorizontal_bias="0.139"
             app:layout_constraintStart_toEndOf="@+id/b4"
             app:layout_constraintTop_toBottomOf="@+id/b3" />
 
         <Button
             android:id="@+id/b5"
-            android:layout_width="118dp"
-            android:layout_height="63dp"
-            android:layout_marginTop="36dp"
+            android:layout_width="114dp"
+            android:layout_height="84dp"
+            android:backgroundTint="#3cc8c8"
             android:text="Shajariyah- Haafiyah"
             android:textStyle="bold"
+            app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.464"
+            app:layout_constraintHorizontal_bias="0.37"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/b4" />
 
@@ -178,9 +197,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
-            android:layout_marginTop="40dp"
+            android:width="120dp"
+            android:backgroundTint="#3cc8c8"
             android:text="Lisaveyah"
             android:textStyle="bold"
+            app:cornerRadius="10dp"
             app:layout_constraintBottom_toTopOf="@+id/b1"
             app:layout_constraintStart_toEndOf="@+id/b2"
             app:layout_constraintTop_toBottomOf="@+id/lahatiyah"
@@ -188,12 +209,14 @@
 
         <Button
             android:id="@+id/b2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="76dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="120dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#3cc8c8"
             android:text="Nit-eeyah"
             android:textStyle="bold"
+            app:cornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/halqiyah" />
 

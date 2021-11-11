@@ -33,7 +33,7 @@ public class result extends AppCompatActivity {
         tv.setText(sb);
         tv2.setText(sb2);
         tv3.setText(sb3);
-
+        int sharescore = quiz.correct;
         quiz.correct=0;
         quiz.wrong=0;
 
@@ -56,7 +56,7 @@ public class result extends AppCompatActivity {
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Yayy! I scored "+sharescore+"/10 in Makharij-ul-Huruf quiz.");
                 sendIntent.setType("text/plain");
 
                 Intent shareIntent = Intent.createChooser(sendIntent, null);
