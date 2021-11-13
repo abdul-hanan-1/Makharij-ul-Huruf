@@ -2,6 +2,7 @@ package com.example.makharij_ul_huruf;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -12,11 +13,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class quiz extends AppCompatActivity {
-    TextView tv;
+    TextView score;
+    TextView tv,countDownText;
     Button submitbutton, quitbutton;
     RadioGroup radio_g;
     RadioButton rb1,rb2,rb3,rb4;
-
+    private CountDownTimer countDownTimer;
+    private long timeLeftInMillisecond = 600000;
+    private boolean timeRunning;
     String questions[] = {
             "Which of the following is produced from middle of the throat?",
             "Which of the following is produced from base of Tongue which is near Uvula touching the mouth roof",
@@ -49,7 +53,9 @@ public class quiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        final TextView score = (TextView)findViewById(R.id.textView4);
+        countDownText = findViewById(R.id.countDownText);
+        startTimer();
+        score = (TextView)findViewById(R.id.textView4);
 
         submitbutton=(Button)findViewById(R.id.next);
         quitbutton=(Button)findViewById(R.id.quit);
@@ -68,9 +74,6 @@ public class quiz extends AppCompatActivity {
         submitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //int color = mBackgroundColor.getColor();
-                //mLayout.setBackgroundColor(color);
-
                 if(radio_g.getCheckedRadioButtonId()==-1)
                 {
                     Toast.makeText(getApplicationContext(), "Please select one choice", Toast.LENGTH_SHORT).show();
@@ -119,5 +122,32 @@ public class quiz extends AppCompatActivity {
             }
         });
     }
+    public void startTimer(){
+        countDownTimer = new CountDownTimer(timeLeftInMillisecond,1000) {
+            @Override
+            public void onTick(long l) {
+                timeLeftInMillisecond = l;
+                updateTimer();
+            }
 
+            @Override
+            public void onFinish() {
+                Intent in = new Intent(getApplicationContext(),result.class);
+                startActivity(in);
+            }
+        }.start();
+        timeRunning = true;
+
+    }
+    public void updateTimer(){
+        int minutes = (int) timeLeftInMillisecond / 60000;
+        int seconds = (int) timeLeftInMillisecond % 60000 / 1000;
+        String timeLeftText;
+        timeLeftText = "" + minutes;
+        timeLeftText += ":";
+        if (seconds<10) timeLeftText += "0";
+        timeLeftText += seconds;
+        countDownText.setText(timeLeftText);
+
+    }
 }

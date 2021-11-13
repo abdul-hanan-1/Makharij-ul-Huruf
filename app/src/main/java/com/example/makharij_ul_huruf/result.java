@@ -63,6 +63,10 @@ public class result extends AppCompatActivity {
                 startActivity(shareIntent);
             }
         });
+
+    }
+
+    public void onBackPressed() {
     }
 
 }
