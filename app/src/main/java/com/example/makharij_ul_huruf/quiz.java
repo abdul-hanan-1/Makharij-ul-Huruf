@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class quiz extends AppCompatActivity {
@@ -19,8 +20,9 @@ public class quiz extends AppCompatActivity {
     RadioGroup radio_g;
     RadioButton rb1,rb2,rb3,rb4;
     private CountDownTimer countDownTimer;
-    private long timeLeftInMillisecond = 600000;
-    private boolean timeRunning;
+    private long timeLeftInMillisecond = 300000;
+    private long mEndTime;
+    private boolean timeRunning = false;
     String questions[] = {
             "Which of the following is produced from middle of the throat?",
             "Which of the following is produced from base of Tongue which is near Uvula touching the mouth roof",
@@ -54,7 +56,9 @@ public class quiz extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
 
         countDownText = findViewById(R.id.countDownText);
-        startTimer();
+        if (!timeRunning) {
+            startTimer();
+        }
         score = (TextView)findViewById(R.id.textView4);
 
         submitbutton=(Button)findViewById(R.id.next);
@@ -123,20 +127,22 @@ public class quiz extends AppCompatActivity {
         });
     }
     public void startTimer(){
-        countDownTimer = new CountDownTimer(timeLeftInMillisecond,1000) {
-            @Override
-            public void onTick(long l) {
-                timeLeftInMillisecond = l;
-                updateTimer();
-            }
+        mEndTime = System.currentTimeMillis() + timeLeftInMillisecond;
+            countDownTimer = new CountDownTimer(timeLeftInMillisecond, 1000) {
+                @Override
+                public void onTick(long l) {
+                    timeLeftInMillisecond = l;
+                    updateTimer();
+                }
 
-            @Override
-            public void onFinish() {
-                Intent in = new Intent(getApplicationContext(),result.class);
-                startActivity(in);
-            }
-        }.start();
-        timeRunning = true;
+                @Override
+                public void onFinish() {
+                    Intent in = new Intent(getApplicationContext(), result.class);
+                    startActivity(in);
+                }
+            }.start();
+            timeRunning = true;
+
 
     }
     public void updateTimer(){
@@ -149,5 +155,50 @@ public class quiz extends AppCompatActivity {
         timeLeftText += seconds;
         countDownText.setText(timeLeftText);
 
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString("timeLeft",countDownText.getText().toString());
+        outState.putInt("flag",flag);
+        outState.putInt("correct",correct);
+        outState.putInt("wrong",wrong);
+        outState.putInt("marks",marks);
+        outState.putLong("timeLeftInMillisecond",timeLeftInMillisecond);
+        outState.putBoolean("timeRunning",timeRunning);
+        outState.putLong("endTime", mEndTime);
+        outState.putString("question",tv.getText().toString());
+        outState.putString("rb1",rb1.getText().toString());
+        outState.putString("rb2",rb2.getText().toString());
+        outState.putString("rb3",rb3.getText().toString());
+        outState.putString("rb4",rb4.getText().toString());
+        super.onSaveInstanceState(outState);
+
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        tv.setText(savedInstanceState.getString("question"));
+        rb1.setText((savedInstanceState.getString("rb1")));
+        rb2.setText((savedInstanceState.getString("rb2")));
+        rb3.setText((savedInstanceState.getString("rb3")));
+        rb4.setText((savedInstanceState.getString("rb4")));
+        countDownText.setText(savedInstanceState.getString("timeLeft"));
+        flag = savedInstanceState.getInt("flag");
+        correct = savedInstanceState.getInt("correct");
+        score.setText(""+correct);
+        wrong = savedInstanceState.getInt("wrong");
+        marks = savedInstanceState.getInt("marks");
+        timeLeftInMillisecond = savedInstanceState.getLong("timeLeftInMillisecond");
+        timeRunning = savedInstanceState.getBoolean("timeRunning");
+        updateTimer();
+
+        if (timeRunning) {
+            mEndTime = savedInstanceState.getLong("endTime");
+            timeLeftInMillisecond = mEndTime - System.currentTimeMillis();
+            startTimer();
+        }
     }
 }
