@@ -6,11 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class result extends AppCompatActivity {
     TextView tv, tv2, tv3;
     Button btnRestart, btnShare,home;
+    int sharescore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class result extends AppCompatActivity {
         tv.setText(sb);
         tv2.setText(sb2);
         tv3.setText(sb3);
-        int sharescore = quiz.correct;
+        sharescore = quiz.correct;
         quiz.correct=0;
         quiz.wrong=0;
 
@@ -69,5 +71,26 @@ public class result extends AppCompatActivity {
     public void onBackPressed() {
     }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("correct",tv.getText().toString());
+        outState.putString("wrong",tv2.getText().toString());
+        outState.putString("finalscore",tv3.getText().toString());
+        outState.putInt("sharescore",sharescore);
+
+
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        tv.setText(savedInstanceState.getString("correct"));
+        tv2.setText(savedInstanceState.getString("wrong"));
+        tv3.setText(savedInstanceState.getString("finalscore"));
+        sharescore = savedInstanceState.getInt("sharescore");
+
+    }
 }
 
