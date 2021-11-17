@@ -34,7 +34,7 @@
             android:id="@+id/name"
             android:layout_width="334dp"
             android:layout_height="123dp"
-            android:layout_marginTop="216dp"
+            android:layout_marginTop="204dp"
             android:fontFamily="@font/allerta"
             android:text="There are 17 emission points (makhārij al-ḥurūf), located in various regions of: "
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -188,7 +188,7 @@
             android:textStyle="bold"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.37"
+            app:layout_constraintHorizontal_bias="0.407"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/b4" />
 

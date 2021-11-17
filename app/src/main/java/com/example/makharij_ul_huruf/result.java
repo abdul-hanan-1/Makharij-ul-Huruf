@@ -79,8 +79,6 @@ public class result extends AppCompatActivity {
         outState.putString("finalscore",tv3.getText().toString());
         outState.putInt("sharescore",sharescore);
 
-
-
     }
 
     @Override
