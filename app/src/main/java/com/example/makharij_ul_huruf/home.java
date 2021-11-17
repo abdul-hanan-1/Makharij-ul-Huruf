@@ -40,7 +40,7 @@ public class home extends AppCompatActivity {
         builder.setTitle("Start Quiz");
         builder.setCancelable(false);
         builder.setPositiveButton(
-                "Kill",
+                "Attempt Quiz",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int asdf)
@@ -49,6 +49,15 @@ public class home extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
+        builder.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int asdf)
+            {
+                finish();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
 
     }
 }
