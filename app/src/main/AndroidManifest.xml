@@ -11,40 +11,51 @@
         android:theme="@style/Theme.MakharijulHuruf">
         <activity
             android:name=".ghunna"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".learn"/>
         <activity
             android:name=".lisaveyah"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".learn"/>
         <activity
             android:name=".niteeyah"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".learn"/>
         <activity
             android:name=".tarfiyah"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".learn"/>
         <activity
             android:name=".haafiyah"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".learn"/>
         <activity
             android:name=".lahatiyah"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".learn"/>
         <activity
             android:name=".halqiyah"
             android:exported="true" />
         <activity
             android:name=".home"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".result"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".home"/>
         <activity
             android:name=".learn"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".home"/>
         <activity
             android:name=".quiz"
-            android:exported="true" />
+            android:exported="true"
+            />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
